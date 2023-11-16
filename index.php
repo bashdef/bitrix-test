@@ -31,4 +31,11 @@ $APPLICATION->SetTitle("1С-Битрикс: Управление сайтом");
 
 	echo "Очки: " . $pointsValue;
 }?>
+	<form method="post" action="/changePoints.php">
+		<input type="number" name="down-points" id="down-points">
+		<button type="submit" name="decrease" value="2">Списать</button>
+		<br>
+		<input type="number" name="up-points" id="up-points">
+		<button type="submit" name="increase" value="1">Начислить</button>
+	</form>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
