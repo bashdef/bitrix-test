@@ -23,4 +23,12 @@ $APPLICATION->SetTitle("1С-Битрикс: Управление сайтом");
 		"USE_BACKURL" => "Y"
 	)
 );?>
+<?php if($USER->IsAuthorized()){
+	$userId = $USER->GetID();
+
+	$userData = CUser::GetByID($userId)->Fetch();
+	$pointsValue = $userData['UF_POINTS'];
+
+	echo "Очки: " . $pointsValue;
+}?>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
