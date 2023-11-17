@@ -1,12 +1,13 @@
-<?
+<?php
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 
 use Bitrix\Main\UI\PageNavigation;
 
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("1С-Битрикс: Управление сайтом");
 global $USER;
 global $DB;
-?><? $APPLICATION->IncludeComponent(
+?>
+<?php   $APPLICATION->IncludeComponent(
         "bitrix:system.auth.form",
         "",
         Array(
@@ -17,7 +18,7 @@ global $DB;
         )
     );
 ?>
-<?if(!$USER->IsAuthorized()){
+<?php if(!$USER->IsAuthorized()){
     $APPLICATION->IncludeComponent(
         "bitrix:main.register",
         "",
@@ -95,4 +96,4 @@ global $DB;
         );
     }
 ?>
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+<?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
